@@ -1,0 +1,197 @@
+{
+  "scenario": "comprehensive",
+  "days": 2,
+  "nbar": 318.05278935185186,
+  "nbar_by_day": [
+    317.76869212962964,
+    318.3368865740741
+  ],
+  "drift_rel": 0.00178807559875227,
+  "personas": {
+    "low": {
+      "target_nominal": 15.0,
+      "expected_mo_total": 1911.0915644171782,
+      "measured_mo_total": 1828.0,
+      "mech_ratio": 0.956521411132638,
+      "resident_sessions_per_day": 7.6923076923076925,
+      "n_resident_ues": 13
+    },
+    "medium": {
+      "target_nominal": 55.0,
+      "expected_mo_total": 6192.277492331288,
+      "measured_mo_total": 6319.0,
+      "mech_ratio": 1.0204646041501935,
+      "resident_sessions_per_day": 18.115384615384617,
+      "n_resident_ues": 13
+    },
+    "high": {
+      "target_nominal": 150.0,
+      "expected_mo_total": 4435.468047034766,
+      "measured_mo_total": 4469.0,
+      "mech_ratio": 1.0075599581847177,
+      "resident_sessions_per_day": 28.625,
+      "n_resident_ues": 4
+    }
+  },
+  "rach": {
+    "preamble_tx": 1305143,
+    "rar": 918744,
+    "msg3": 918928,
+    "success": 918744,
+    "collided_tx": 368,
+    "giveup": 0,
+    "collision_rate": 0.000281961440240648,
+    "detect_ratio": 0.7039412539468856,
+    "success_per_day": 459372.0,
+    "msg3_per_setup": 1.0002002734167517,
+    "preamble_per_setup": 1.4205730867358046
+  },
+  "paging": {
+    "sent": 26117,
+    "answered": 23564,
+    "mt_data": 17081,
+    "mt_voice": 734,
+    "engage": 5749,
+    "mo_bg": 495797,
+    "mt_share_of_bg_wakeups": 0.044020076085510396,
+    "mt_voice_expected_triggers": 700.1556196319019,
+    "mt_voice_ratio": 1.048338368527116,
+    "mt_voice_completed_per_ue_day": 1.1538964985903626,
+    "pages_per_ue_day": 41.057649664420296,
+    "retry_hist": {
+      "1": 21270,
+      "2": 2077,
+      "3": 231
+    }
+  },
+  "cause_breakdown": {
+    "service_resume": 386767,
+    "mo_bg": 495797,
+    "mt_data": 17081,
+    "mt_engage": 5749,
+    "user_mo": 12616,
+    "mt_voice": 734
+  },
+  "service_sessions": {
+    "browsing": {
+      "n": 8972,
+      "censored": 2307,
+      "wall_mean_s": 1711.7293323330832,
+      "wall_p50_s": 1709.0,
+      "active_mean_s": 281.8603150787697,
+      "bursts_mean": 37.994598649662414
+    },
+    "voice": {
+      "n": 3237,
+      "censored": 108,
+      "wall_mean_s": 128.24608501118567,
+      "wall_p50_s": 128.0,
+      "active_mean_s": 119.24608501118568,
+      "bursts_mean": 1.0
+    },
+    "streaming": {
+      "n": 6875,
+      "censored": 1377,
+      "wall_mean_s": 1204.3264823572208,
+      "wall_p50_s": 1182.5,
+      "active_mean_s": 460.988541287741,
+      "bursts_mean": 16.133503092033468
+    }
+  },
+  "shape": {
+    "lut_report": {
+      "profile": "comprehensive",
+      "peaks_h_target": [
+        12.0,
+        21.5
+      ],
+      "peaks_h_achieved": [
+        11.991666666666667,
+        21.491666666666667
+      ],
+      "valley_h_in_window": 4.208333333333333,
+      "valley_ok": true,
+      "pv_target": 9.47,
+      "pv_achieved": 9.14248057970082,
+      "mean": 1.0,
+      "weekend_factor": 1.0
+    },
+    "peaks_h_realized": [
+      11.75,
+      21.25
+    ],
+    "pv_realized": 9.257352941176471,
+    "arrivals_per_day": 5537.5,
+    "valley_window_arrivals": 309.0
+  },
+  "timing": {
+    "elapsed_s": 165.26561784744263,
+    "total_slots": 259200,
+    "slots_per_s": 1568.3842978112277,
+    "full_run_est_s": 605.9739321072896
+  },
+  "env": {
+    "LTE_ARRIVAL_PROFILE": "comprehensive",
+    "LTE_ARRIVAL_SCALE": "1.0",
+    "LTE_ACCESS_SCALE": "1.0",
+    "LTE_WEEKEND": "0",
+    "LTE_SITE_COMPOSITION": "0",
+    "LTE_SCALE_PROFILE": "large",
+    "LTE_SERVICE_MIX": "balanced",
+    "LTE_TOTAL_TIME": "172800",
+    "LTE_WARMUP_SLOTS": "86400"
+  },
+  "gates": {
+    "G2a_persona_sessions": {
+      "pass": true,
+      "order_ok": true,
+      "detail": [
+        "low: mech -4.3% | res/day 7.7 (nom 15)",
+        "medium: mech +2.0% | res/day 18.1 (nom 55)",
+        "high: mech +0.8% | res/day 28.6 (nom 150)"
+      ]
+    },
+    "G2b_rach": {
+      "pass": true,
+      "collision_rate": 0.000281961440240648,
+      "giveup": 0
+    },
+    "G2c_paging": {
+      "pass": true,
+      "mt_share": 0.044020076085510396,
+      "f_mt_base": 0.05,
+      "mt_voice_ratio": 1.048338368527116
+    },
+    "G3_shape": {
+      "pass": true,
+      "peaks_realized": [
+        11.75,
+        21.25
+      ],
+      "peaks_target": [
+        12.0,
+        21.5
+      ],
+      "lut_pv": 9.14248057970082,
+      "pv_target": 9.47,
+      "pv_realized_note": "1.01x of LUT (WARN only)"
+    },
+    "G3_nbar": {
+      "pass": true,
+      "nbar": 318.05278935185186,
+      "target": 320.0,
+      "drift_rel": 0.00178807559875227
+    },
+    "G4_compute": {
+      "pass": true,
+      "slots_per_s": 1568.3842978112277,
+      "full_run_est_min": 10.099565535121492,
+      "runs": 220,
+      "workers": 4,
+      "est_wall_days": 0.38574729474422365,
+      "note": "budget OK"
+    }
+  },
+  "calibration_source": "calibration_comprehensive.json",
+  "seed": 7
+}

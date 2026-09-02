@@ -1,0 +1,20 @@
+{
+  "scenario": "comprehensive",
+  "target_nbar": 320.0,
+  "LTE_ARRIVAL_SCALE": 1.0,
+  "LTE_ACCESS_SCALE": 1.0,
+  "achieved_nbar": 321.0051041666667,
+  "iters": 1,
+  "history": [
+    {
+      "iter": 1,
+      "arrival_scale": 1.0,
+      "nbar": 321.0051041666667,
+      "rel_err": 0.0031409505208332966,
+      "elapsed_s": 96.28992414474487
+    }
+  ],
+  "warmup_days": 1,
+  "cal_days": 1,
+  "seed": 7
+}

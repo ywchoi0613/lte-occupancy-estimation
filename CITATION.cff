@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "UE-Aware Cell Occupancy Inference from Partially Observable Cellular Control-Plane Data"
+abstract: >-
+  Simulator, estimators and experiment scripts for inferring the number of UEs
+  physically present in a single LTE cell from control-plane observations, under
+  cooperative network-side (Mode A) and passive air-interface (Mode B) regimes.
+authors:
+  - family-names: Choi
+    given-names: Yeonwoo
+license: Apache-2.0
+repository-code: "https://github.com/ywchoi0613/lte-occupancy-estimation"
+type: software
+preferred-citation:
+  type: article
+  title: "UE-Aware Cell Occupancy Inference from Partially Observable Cellular Control-Plane Data"
+  authors:
+    - family-names: Choi
+      given-names: Yeonwoo
+  journal: "PeerJ Computer Science"
+  year: 2026
+  # doi: to be filled in on acceptance

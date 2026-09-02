@@ -1,0 +1,17 @@
+# Versions are those used for every result in the paper (Python 3.10.20).
+# Pinned rather than lower-bounded: XGBoost and PyTorch minor releases have
+# changed default tree construction and RNG consumption in the past, either of
+# which would break bit-level reproduction of the published numbers.
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.7.2
+xgboost==3.2.0
+torch==2.5.1
+optuna==4.0.0
+scipy==1.14.1
+pytest==8.3.3
+
+# torch 2.5.1 was installed with the CUDA 12.1 build:
+#   pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+# XGBoost trains on the CPU (XGB_FORCE_CPU=1 in the pipeline scripts); only the
+# LSTM branches use the GPUs.

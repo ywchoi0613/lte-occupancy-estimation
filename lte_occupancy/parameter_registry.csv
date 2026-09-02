@@ -1,0 +1,127 @@
+parameter,value,unit,source_type,source,rationale,sweep
+simulation.time.slot_duration_s,1.0,s,scenario,design,1 slot := 1 s; sets the seconds<->slots mapping,-
+simulation.time.total_slots,432000,slots,scenario,design,"evaluation run length (432,000 slots = 5.0 days at 1 s/slot; warm-up excluded)",LTE_TOTAL_TIME
+simulation.time.train_ratio,0.8,-,scenario,design,chronological train fraction; test is the final 20%,-
+simulation.topology.n_cells,1,count,scenario,design,single-cell scope (no handover / inter-cell),-
+simulation.topology.initial_nonresident_ues,60,UEs,scenario,scale profile,seed population of finite-dwell UEs at t=0,LTE_SCALE_PROFILE
+simulation.topology.resident_ues,30,UEs,scenario,scale profile,always-present UEs (never exit),LTE_SCALE_PROFILE
+simulation.arrival.base_rate,0.5,UEs/slot,scenario,scale profile,base Poisson arrival intensity,LTE_SCALE_PROFILE
+simulation.arrival.diurnal_period_slots,86400,slots,scenario,design,"one diurnal cycle = 86,400 slots = 24 h at 1 s/slot; t_sin/t_cos therefore encode wall-clock time of day, not a simulator-internal period",-
+simulation.arrival.global_event_prob,0.015,prob/slot,scenario,design,per-slot chance of a whole-cell demand surge,-
+simulation.arrival.global_event_access_boost,2.2,x,scenario,design,access-prob multiplier during a whole-cell surge,-
+simulation.mobility.dwell_classes.transient.weight,0.2,slots/weight,scenario,design,transient/regular/stationary dwell (exp) + class weights,-
+simulation.mobility.dwell_classes.transient.mean_dwell,200,slots/weight,scenario,design,transient/regular/stationary dwell (exp) + class weights,-
+simulation.mobility.dwell_classes.regular.weight,0.5,slots/weight,scenario,design,transient/regular/stationary dwell (exp) + class weights,-
+simulation.mobility.dwell_classes.regular.mean_dwell,400,slots/weight,scenario,design,transient/regular/stationary dwell (exp) + class weights,-
+simulation.mobility.dwell_classes.stationary.weight,0.3,slots/weight,scenario,design,transient/regular/stationary dwell (exp) + class weights,-
+simulation.mobility.dwell_classes.stationary.mean_dwell,600,slots/weight,scenario,design,transient/regular/stationary dwell (exp) + class weights,-
+simulation.mobility.min_dwell_slots,20,slots,scenario,design,floor on sampled dwell,-
+simulation.traffic.usage_intensity.low.weight,0.35,prob/weight,scenario,design,low/medium/high per-slot access probabilities + weights,-
+simulation.traffic.usage_intensity.low.access_prob,0.003,prob/weight,scenario,design,low/medium/high per-slot access probabilities + weights,-
+simulation.traffic.usage_intensity.medium.weight,0.45,prob/weight,scenario,design,low/medium/high per-slot access probabilities + weights,-
+simulation.traffic.usage_intensity.medium.access_prob,0.015,prob/weight,scenario,design,low/medium/high per-slot access probabilities + weights,-
+simulation.traffic.usage_intensity.high.weight,0.2,prob/weight,scenario,design,low/medium/high per-slot access probabilities + weights,-
+simulation.traffic.usage_intensity.high.access_prob,0.035,prob/weight,scenario,design,low/medium/high per-slot access probabilities + weights,-
+simulation.traffic.service_types.voice.weight,0.2,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.voice.duration_mean,160,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.voice.duration_std,60,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.voice.multi_rrc,False,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.streaming.weight,0.35,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.streaming.duration_mean,120,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.streaming.duration_std,60,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.streaming.multi_rrc,True,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.streaming.burst_len_mean,27,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.streaming.burst_len_std,4,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.streaming.idle_len_mean,25,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.browsing.weight,0.45,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.browsing.duration_mean,60,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.browsing.duration_std,25,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.browsing.multi_rrc,True,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.browsing.burst_len_mean,27,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.browsing.burst_len_std,4,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.service_types.browsing.idle_len_mean,45,slots/weight,scenario,adapted from 3GPP TR 36.822,"voice/streaming/browsing durations, burst/idle structure, mix weights",LTE_SERVICE_MIX
+simulation.traffic.min_service_duration_slots,3,slots,scenario,design,floor on a service session length,-
+simulation.rrc.inactivity_timer_s,10,s,literature,Huang et al. 2013,"commercial LTE RRC inactivity ~10 s; srsRAN's ~30 s default is absorbed by the measured idle_gap, so this timer governs session length",--timer / RRC sweep
+simulation.rrc.ra_retry_prob,0.05,prob,scenario,design,random-access preamble retry probability,-
+simulation.rrc.reject_prob,0.01,prob,scenario,design,RRC setup reject probability,-
+simulation.rrc.detach_on_exit_prob,0.025,prob,scenario,design,chance of explicit DETACH when a UE leaves,-
+simulation.rrc.meas_report_prob_per_slot,0.195,prob/slot,scenario,design,per-slot measurement-report emission for a connected UE,-
+simulation.rrc.nas_ul_on_attach,5,msgs,literature,3GPP TS 24.301,UL NAS messages on initial attach,-
+simulation.rrc.nas_dl_on_attach,6,msgs,literature,3GPP TS 24.301,DL NAS messages on initial attach,-
+simulation.paging.prob_base,0.0199,prob/slot,scenario,design,base per-slot paging probability for an idle UE,-
+simulation.paging.response_prob,0.9,prob,scenario,design,probability a paged UE responds,-
+simulation.radio.rsrp_at_center_dbm,-60.0,dBm,literature,typical macro-cell RSRP,RSRP at cell centre; GENERATED per UE but UNUSED this edition,-
+simulation.background.empirical_idle_gap_file,lte_occupancy/empirical_idle_gap.json,file,measured,srsRAN epc.log,"per-class release->reconnect idle-gap DISTRIBUTIONS, bootstrap-sampled, floored to slots; timer-invariant",-
+simulation.background.device_bg_class.chatty.weight,0.36,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.chatty.bg_burst_mean,10,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.chatty.bg_burst_std,4,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.moderate.weight,0.29,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.moderate.bg_burst_mean,10,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.moderate.bg_burst_std,4,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.quiet_bg.weight,0.35,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.quiet_bg.bg_burst_mean,10,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+simulation.background.device_bg_class.quiet_bg.bg_burst_std,4,weight/slots,scenario,design,chatty/moderate/quiet_bg class WEIGHTS + burst means; 3-class split weakly supported (silhouette 0.16 for 3-class vs 0.35 for 2-class) — documented limit,-
+observation.mode_a_features,n_connected; n_new_connections; n_release; n_release_request; n_paging; n_initial_ue_msg; n_ul_nas; n_dl_nas; n_bearer_activated; n_rrc_request; n_rrc_setup; n_rrc_setup_complete; n_rrc_reconfig; n_meas_report; n_rach_trigger; n_rach_success; n_attach_request; n_detach_request; n_service_request; n_paging_response,counters,scenario,cooperative eNB,20 observable S1AP/NAS/RRC counters (incl. n_paging_response),-
+observation.mode_b_features,n_connected; n_rrc_request; n_rrc_setup; n_rrc_setup_complete; n_paging; n_rach_trigger; n_rach_success; n_release_inferred,counters,literature,LTESniffer (Hoang 2023),8 counters a passive over-the-air sniffer can recover,-
+observation.drx_miss_prob,0.05,prob,scenario,sniffer abstraction,fraction of connected UEs invisible to the sniffer per slot (DRX),-
+observation.release_inference.mean_delay_s,1.5,s,scenario,sniffer model,mean release-detection lag (non-negative; clamped),-
+observation.release_inference.delay_std_s,0.5,s,scenario,sniffer model,release-detection lag jitter,-
+observation.release_inference.false_negative_prob,0.05,prob,scenario,sniffer model,probability a true release is missed,-
+observation.release_inference.false_positive_rate,0.02,per-UE,scenario,sniffer model,spurious-release rate per connected UE,-
+observation.stmsi.realloc_mean_slots,10800,slots,scenario,Hong 2018 (informed); Shaik 2016,mean S-TMSI reallocation interval (~3 h exp); fragments Mode B tracks only,LTE_STMSI_REALLOC
+model.per_ue.n_clusters,3,count,hyperparameter,-,UE behaviour clusters for the empirical survival curve,-
+model.per_ue.prune_elapsed,300,slots,hyperparameter,-,per-UE feature horizon / track pruning,-
+model.per_ue.subsample,50,-,hyperparameter,-,keep 1/N per-UE samples in time (compute budget),-
+model.per_ue.survival_max_elapsed,1500,slots,hyperparameter,-,max elapsed retained in the survival table,-
+model.xgb_reg.n_estimators,300,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.max_depth,6,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.learning_rate,0.05,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.subsample,0.9,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.colsample_bytree,0.9,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.n_jobs,4,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.objective,reg:squarederror,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.tree_method,hist,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.xgb_reg.device,cpu,-,hyperparameter,-,"XGBoost regressor settings (tuned for MAE, not physics)",-
+model.mode_b_xgb_overrides.n_estimators,500,-,hyperparameter,-,Mode-B-specific XGB overrides (noisier signals),-
+model.mode_b_xgb_overrides.max_depth,5,-,hyperparameter,-,Mode-B-specific XGB overrides (noisier signals),-
+model.mode_b_xgb_overrides.learning_rate,0.03,-,hyperparameter,-,Mode-B-specific XGB overrides (noisier signals),-
+model.mode_b_xgb_overrides.subsample,0.85,-,hyperparameter,-,Mode-B-specific XGB overrides (noisier signals),-
+model.mode_b_xgb_overrides.colsample_bytree,0.85,-,hyperparameter,-,Mode-B-specific XGB overrides (noisier signals),-
+model.mode_b_xgb_overrides.n_jobs,4,-,hyperparameter,-,Mode-B-specific XGB overrides (noisier signals),-
+model.lstm.hidden,64,-,hyperparameter,-,LSTM architecture/training settings (tuned for MAE),-
+model.lstm.dense,32,-,hyperparameter,-,LSTM architecture/training settings (tuned for MAE),-
+model.lstm.dropout,0.1,-,hyperparameter,-,LSTM architecture/training settings (tuned for MAE),-
+model.lstm.lr,0.001,-,hyperparameter,-,LSTM architecture/training settings (tuned for MAE),-
+model.lstm.batch,64,-,hyperparameter,-,LSTM architecture/training settings (tuned for MAE),-
+model.lstm.epochs,50,-,hyperparameter,-,LSTM architecture/training settings (tuned for MAE),-
+model.lstm.patience,8,-,hyperparameter,-,LSTM architecture/training settings (tuned for MAE),-
+simulation.arrival.commute_bumps,"(0.32, 0.1, 0.55); (0.72, 0.09, 0.95)",-,scenario,design,two Gaussian commute-like peaks (center/width/height) on the arrival rate,-
+simulation.arrival.day_scale_range,0.85; 1.15,-,scenario,design,per-cycle Uniform arrival multiplier (mild aperiodicity),-
+simulation.arrival.day_scale_buffer_days,2,cycles,scenario,design,extra cycles appended to the per-cycle scale vector,-
+simulation.arrival.burst_events,"(500, 80, 0.45); (3500, 80, 0.7); (6500, 100, 0.55); (9500, 80, 0.8); (12500, 100, 0.45); (15500, 80, 0.65); (18500, 80, 0.5); (21500, 100, 0.75); (24500, 80, 0.4); (27500, 80, 0.6)",-,scenario,scale profile,fixed rectangular demand surges (start/dur/amplitude); amplitude scales with profile,LTE_SCALE_PROFILE
+simulation.mobility.resident_exit_pad_slots,9999,slots,scenario,design,residents' exit = total_slots + pad (never leave),-
+simulation.paging.intensity_factor.low,0.6,x,scenario,design,paging-rate multiplier by usage class (low/medium/high),-
+simulation.paging.intensity_factor.medium,1.0,x,scenario,design,paging-rate multiplier by usage class (low/medium/high),-
+simulation.paging.intensity_factor.high,1.5,x,scenario,design,paging-rate multiplier by usage class (low/medium/high),-
+simulation.radio.dist_beta,2.0; 5.0,-,scenario,design,"Beta(a,b) normalized distance; GENERATED but unused",-
+simulation.radio.rsrp_edge_drop_db,40.0,dB,scenario,design,RSRP drop centre->edge; GENERATED but unused,-
+simulation.radio.shadowing_std_db,3.0,dB,scenario,design,log-normal shadowing std; GENERATED but unused,-
+simulation.gc_interval_slots,500,slots,scenario,design,prune OUT UEs every N slots (housekeeping; no result impact),-
+observation.stmsi.enabled,False,bool,scenario,LTE_STMSI_REALLOC,whether S-TMSI reallocation identity-noise is active (Mode B only),LTE_STMSI_REALLOC
+model.xgb_clf.n_estimators,200,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.max_depth,5,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.learning_rate,0.05,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.subsample,0.8,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.colsample_bytree,0.8,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.n_jobs,4,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.eval_metric,logloss,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.tree_method,hist,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+model.xgb_clf.device,cpu,-,hyperparameter,-,Per-UE XGBoost classifier settings (tuned for MAE),-
+features.ewma_alphas,0.1; 0.3; 0.5,-,hyperparameter,-,EWMA smoothing factors for cell features,-
+features.lag_offsets,1; 3; 5; 10,slots,hyperparameter,-,lagged-interaction offsets,-
+features.surge_window,30,slots,hyperparameter,-,trailing window for the observable-surge baseline,sweepable
+features.surge_percentile,95.0,-,hyperparameter,-,train-only percentile defining an observed surge,-
+features.release_spike_percentile,95.0,-,hyperparameter,-,train-only percentile defining a release spike,-
+features.turnover_windows,10; 30; 60,slots,hyperparameter,-,rolling windows for turnover-ratio features,-
+features.flow_cumulative_window,300,slots,hyperparameter,-,window for cumulative net-flow feature,-
+features.paging_windows,30; 60; 300,slots,hyperparameter,-,rolling windows for paging-response-rate features (Mode A),-
